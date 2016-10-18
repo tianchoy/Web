@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <?php echo GetHeader(1,0,0,'客户留言'); ?>
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+    <link href="css/index.css" rel="stylesheet">
+</head>
+<body>
+<div class="form">
+    <h3>预约面对面</h3>
+    <form name="form" id="form" method="post" action="">
+        <div class="formCon">
+            <dl>
+                <dt>姓名</dt>
+                <dd><input name="nickname" type="text" id="nickname" class="msg_input" placeholder="请输入您的姓名"/></dd>
+            </dl>
+            <dl>
+                <dt>手机</dt>
+                <dd><input name="contact" type="number" id="contact" class="msg_input" placeholder="请输入您的手机"/></dd>
+            </dl>
+            <dl>
+                <dt>预约时间</dt>
+                <dd>
+                    <input name="content" type="text" class="" id="content" placeholder="点击选择起算日期" data-date-format="yyyy-mm-dd hh:ii" readonly>
+                    <input type="hidden" id="dtp_input1" value="" /><br/>
+                </dd>
+            </dl>
+        </div>
+        <p class="notice">
+            温馨提示：<br/>
+            1、接受预约：工作日:    9：00—21:00<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            周六周日:  10:00-17:00<br/>
+            2、咨询费500元/次，约1.5小时。咨询后聘请律师的，咨询费可充抵律师费。
+        </p>
+        <div class="formBtn">
+            <button type="reset" class="reset">重置</button>
+            <a href="javascript:void(0);" onclick="cfm_msg();return false;" class="sub">提交</a>
+        </div>
+        <input type="hidden" name="action" id="action" value="add" />
+    </form>
+</div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
