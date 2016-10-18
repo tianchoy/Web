@@ -1,0 +1,11 @@
+#datetimepicker td.day{padding:3%;font-size: 16px;}
+  #datetimepicker .datetimepicker-inline{width:90%}
+  .table-condensed thead > tr > th{padding:10px;}
+  .table-condensed{width:100%;}
+  #datetimepicker td.day.active{background:#d52a3a;}
+  .datetimepicker-days .table-condensed td.day.active{background:#d52a3a;}
+  .datetimepicker-days .table-condensed td.month.active{background:#d52a3a;}
+  .datetimepicker-days .table-condensed td.year.active{background:#d52a3a;}
+  .datetimepicker-days .table-condensed .today{background:#eee;}
+  .datetimepicker th.switch, .datetimepicker-days .table-condensed .today, .table-condensed thead > tr > th, .datetimepicker table tr td span,  .datetimepicker tfoot th{font-size: 16px;}
+  .datetimepicker thead tr:first-child th i {background:#000;}
