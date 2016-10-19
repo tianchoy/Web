@@ -1,11 +1,22 @@
+.fBox .rightSide .yuyue{border:1px solid #e7e6e6;margin-bottom: 30px;}
+.fBox .rightSide .yuyue h3{border-right:0;}
+.fBox .rightSide .yuyue .form{padding:30px 20px;}
+.fBox .rightSide .yuyue .form dl{clear:both;overflow: hidden;margin:10px 0 20px 0;}
+.fBox .rightSide .yuyue .form dl dt{float:left;width:40px;font-size: 14px;color:#646464;margin-right: 20px;}
+.fBox .rightSide .yuyue .form dl input,#OnlineConsulting .form dl select{width: 180px;font-size: 12px;color:#999;border:1px solid #e7e6e6;padding:4px 0 4px 5px}
+.fBox .rightSide .yuyue .form dl select,.fBox .rightSide .yuyue .form dl option{width:184px;margin-top: 5px;color:#999;font-size: 12px;border:1px solid #e7e6e6;padding:4px 0 4px 5px}
+.fBox .rightSide .yuyue .form .notice{font-size: 12px;margin: 15px 0;line-height: 20px;color:#646464;}
+.fBox .rightSide .yuyue .form .formBtn .reset{background: #535353;padding:5px 40px;border:0;color:#fff;font-size: 12px;}
+.fBox .rightSide .yuyue .form .formBtn .sub{display: inline-block;padding:5px 40px;background: #cc3c42;margin-left: 20px;float: right;color:#fff;font-size: 12px;}
+
 #datetimepicker td.day{padding:3%;font-size: 16px;}
-  #datetimepicker .datetimepicker-inline{width:90%}
-  .table-condensed thead > tr > th{padding:10px;}
-  .table-condensed{width:100%;}
-  #datetimepicker td.day.active{background:#d52a3a;}
-  .datetimepicker-days .table-condensed td.day.active{background:#d52a3a;}
-  .datetimepicker-days .table-condensed td.month.active{background:#d52a3a;}
-  .datetimepicker-days .table-condensed td.year.active{background:#d52a3a;}
-  .datetimepicker-days .table-condensed .today{background:#eee;}
-  .datetimepicker th.switch, .datetimepicker-days .table-condensed .today, .table-condensed thead > tr > th, .datetimepicker table tr td span,  .datetimepicker tfoot th{font-size: 16px;}
-  .datetimepicker thead tr:first-child th i {background:#000;}
+#datetimepicker .datetimepicker-inline{width:90%}
+.table-condensed thead > tr > th{padding:10px;}
+.table-condensed{width:100%;}
+#datetimepicker td.day.active{background:#d52a3a;}
+.datetimepicker-days .table-condensed td.day.active{background:#d52a3a;}
+.datetimepicker-days .table-condensed td.month.active{background:#d52a3a;}
+.datetimepicker-days .table-condensed td.year.active{background:#d52a3a;}
+.datetimepicker-days .table-condensed .today{background:#eee;}
+.datetimepicker th.switch, .datetimepicker-days .table-condensed .today, .table-condensed thead > tr > th, .datetimepicker table tr td span,  .datetimepicker tfoot th{font-size: 16px;}
+.datetimepicker thead tr:first-child th i {background:#000;}
