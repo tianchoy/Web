@@ -2,7 +2,7 @@
  * Created by tianchao on 2016/10/18.
  */
 $(document).ready(function(){
-    $('#time').datetimepicker({
+    $('#content').datetimepicker({
         language:  'zh-CN',
         weekStart: 1,
         todayBtn:  1,
@@ -12,36 +12,33 @@ $(document).ready(function(){
         forceParse: 0,
         showMeridian: 1
     });
-    $("#sub").click(function(){
-        if($("#user").val() == ''){
-            alert('请输入您的姓名');
-            $("#user").focus();
+
+
+    function cfm_msg()
+    {
+        if($("#nickname").val() == "")
+        {
+            alert("请填写您的称呼！");
+            $("#nickname").focus();
             return false;
         }
-        if($("#mobile").val() == ''){
-            alert('请输入您的手机号');
-            $("#mobile").focus();
+        if($("#contact").val() == "")
+        {
+            alert("请填写联系方式！");
+            $("#contact").focus();
             return false;
-        }else{
-            var mobile = $("#mobile").val();
-            if(!/^(13[0-9]{9})|(18[0-9]{9})|(14[0-9]{9})|(17[0-9]{9})|(15[0-9]{9})$/i.test(mobile))
-            {
-                alert('请输入正确的手机号码');
-                return false;
-            }
         }
-        if($("#time").val() == "")
+        if($("#content").val() == "")
         {
             alert("请填写预约的时间！");
-            $("#time").focus();
+            $("#content").focus();
             return false;
         }else{
-            var nowGetTime = $("#time").val();
-            var getTime = ($("#time").val()).slice(0,10);//获取的时间
+            var nowGetTime = $("#content").val();
+            var getTime = ($("#content").val()).slice(0,10);//获取的时间
             var week = ("星期"+"天一二三四五六".charAt(new Date(getTime).getDay())); //判断是周几?
-            var timer = ($("#time").val()).slice(11,16); //判断选择的时间
+            var timer = ($("#content").val()).slice(11,16); //判断选择的时间
             var nowTime = getNowFormatDate();
-
 
             //计算当前时间和预约的时间
             var OneMonth = nowTime.substring(5,nowTime.lastIndexOf ('-'));
@@ -76,7 +73,6 @@ $(document).ready(function(){
                 return false;
             }
 
-
             //计算预约的时间是否为周末，以及相应的预约时间段
             if(week == '星期六' || week == '星期天'){
                 if(timer < '10:00' || timer > '17:00'){
@@ -91,7 +87,8 @@ $(document).ready(function(){
             }
         }
         $("#form").submit();
-    });
+    }
+
     function getNowFormatDate() {
         var date = new Date();
         var seperator1 = "-";
@@ -108,21 +105,27 @@ $(document).ready(function(){
         return currentdate;
     }
 
+    $(function(){
+        $("#nickname").focus(function(){
+            $("#nickname").attr("class", "msg_input_on");
+        }).blur(function(){
+            $("#nickname").attr("class", "msg_input");
+        });
+        $("#contact").focus(function(){
+            $("#contact").attr("class", "msg_input_on");
+        }).blur(function(){
+            $("#contact").attr("class", "msg_input");
+        });
 
-    //离婚流程TAB切换
-   $('.xy').click(function() {
-       $(this).addClass('on');
-       $('.ss').removeClass('on');
-       $('.xyc').css('display','block');
-       $('.ssc').css('display','none');
-       return false;
-   });
-    $('.ss').click(function() {
-        $(this).addClass('on');
-        $('.xy').removeClass('on');
-        $('.ssc').css('display','block');
-        $('.xyc').css('display','none');
-        return false;
+        $("#content").focus(function(){
+            $("#content").attr("class", "msg_input_on");
+        }).blur(function(){
+            $("#content").attr("class", "msg_input");
+        });
+
+
+
+        $("#nickname").focus();
     });
 
 
