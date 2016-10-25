@@ -38,6 +38,9 @@
 $(".search_nav").mouseover(function(){
     $(".searchList").css('display','block');
 });
+$(".search_nav").mouseout(function(){
+    $(".searchList").css('display','none');
+});
 $(".searchList a").click(function(){
     var li = $(this).text();
     $(".search_nav span").text(li);
