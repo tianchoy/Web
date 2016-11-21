@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<head>
+    <meta charset=utf-8" />
+    <title>图片左右滚动</title>
+    <script src="Js/jquery.min.js" type="text/javascript"></script>
+    <script>
+        $(function(){
+            var i=0;
+            var li = $(".lxfscroll li");
+            var n=li.length-1;
+            var speed = 300;
+            li.not(":first").css({left:"400px"});
+            li.eq(n).css({left:"-400px"});
+            lxfNext=function (){
+                if (!li.is(":animated")) {
+                    if (i>=n){i=0;li.eq(n).animate({left:"-400px"},speed);
+                        li.eq(i).animate({left:"0px"},speed);
+                    }else{i++;li.eq(i-1).animate({left:"-400px"},speed);li.eq(i).animate({left:"0px"},speed);};
+                    li.not("eq(i)").css({left:"400px"});
+                    $("i").text(i+1);
+                }else{};
+            };
+            lxfLast=function (){
+                if (!li.is(":animated")) {
+                    if (i<=0){i=n;li.eq(0).animate({left:"400px"},speed);li.eq(n).animate({left:"0px"},speed);
+                    }else{i--;li.eq(i+1).animate({left:"400px"},speed);li.eq(i).animate({left:"0px"},speed);}
+                    li.not("eq(i)").css({left:"-400px"});
+                    $("i").text(i+1);
+                };
+            };
+        });
+    </script>
+    <style type="text/css">
+        * {
+            font-size:12px;
+            color:#333;
+            text-decoration:none;
+            padding:0;
+            margin:0;
+            list-style:none;
+            font-style: normal;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .lxfscroll {
+            width:400px;
+            margin-left:auto;
+            margin-right:auto;
+            margin-top: 20px;
+            overflow: hidden;
+            position: relative;
+            height: 300px;
+            border: 1px dashed #CCC;
+        }
+        .button {
+            margin-right:auto;
+            margin-left:auto;
+            width:400px;
+            text-align:center;
+            padding-top: 10px;
+        }
+        i {
+            color:#F00;
+            font-weight:bold;
+        }
+        .button input {
+            padding-top: 4px;
+            padding-right: 12px;
+            padding-bottom: 4px;
+            padding-left: 12px;
+        }
+        .lxfscroll ul li {
+            height: 300px;
+            width: 400px;
+            text-align: center;
+            line-height: 300px;
+            position: absolute;
+            font-size: 40px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="lxfscroll">
+    <ul>
+        <li>我是第1张图片</li>
+        <li>我是第2张图片</li>
+        <li>我是第3张图片</li>
+        <li>我是第4张图片</li>
+        <li>我是第5张图片</li>
+        <li>我是第6张图片</li>
+        <li>我是第7张图片</li>
+        <li>我是第N张图片</li>
+    </ul>
+</div>
+<div class="button">
+    <input name="a" type="button" onClick="lxfLast()" value="上一个" />
+    <input name="a" type="button" onClick="lxfNext()" value="下一个" />
+</div>
+<div class="button">当前显示的是第 <i>1</i> 张图片</div>
+</body>
+</html>
