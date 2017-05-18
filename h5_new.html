@@ -67,13 +67,17 @@
     }
 
     function small(){
-        $(".content").css('font-size','.8rem')
+        changeFontSize(.8+'em');
     }
     function middle(){
-        $(".content").css('font-size','1rem')
+        changeFontSize(1+'em');
     }
     function big(){
-        $(".content").css('font-size','1.2rem')
+        changeFontSize(1.2+'em');
+    }
+    big(); //默认字体为大
+     function changeFontSize(size) {
+        document.getElementsByTagName("html")[0].style.fontSize = size;
     }
 
 </script>
