@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="http://demo.jb51.net/js/2015/jquery-fix-top-cha-show-codes/jquery-1.6.2.min.js"></script>
+    <style>
+        body{background:#e7e7e7;}
+        .main{width:750px;margin:0 auto;position:relative;}
+        .main-con{float:right;width:600px;}
+        .main-con .list{margin:10px 0 10px 0;}
+        .nav,.list_main{background:#fff;padding:10px;border:1px solid #ccc;}
+        .nav{margin-bottom:10px;}
+    </style>
+</head>
+<script>
+    $(function () {
+        $(".nav").css("width",$(".list_main").width());
+        var resetRightPanelPostion = function () {
+            var msie6 = $.browser.msie && $.browser.version == '6.0' && $.browser.version < 7;
+            if ($.browser.safari) {
+                bodyelem = $("body");
+            } else {
+                bodyelem = $("html,body");
+            }
+            var bodyTop = bodyelem.scrollTop();
+            var top = $(".main-con").offset().top;
+            var t = $(".main").offset().top;
+            for(var i = 0 ; i < $(".list .nav").length ; i++){
+                if (bodyTop >= top && ((bodyTop + $(".main-con").outerHeight()) < t)) {
+                    if (!msie6) {
+                        if (bodyTop + $(".list").outerHeight() >= t) {
+                            $(".list").removeClass('fixed').css({
+                                "position": "absolute",
+                                "top": t - $(".list").outerHeight() + "px"
+                            });
+                        } else {
+                            $(".list").css({
+                                "position": "fixed",
+                                "top": 0
+                            });
+                        }
+                    }
+                } else {
+                    if (!msie6) {
+                        $(".list").css({
+                            "position": "static"
+                        });
+                    }
+                }
+                if(bodyTop>$(".list").eq(i).offset().top){
+                    $(".nav").eq(i).css({position:"absolute",top:top-168});
+                }
+                if(bodyTop>$(".list").eq(i).offset().top){
+                    $(".nav").eq(i).css({position:"fixed",top:0});
+                }
+                if(bodyTop<=$(".list").eq(i).offset().top){
+                    $(".nav").eq(i).css({position:"static",top:0});
+                }
+            }
+        };
+        window.onload = function () {
+            if ($(".list").length) {
+                resetRightPanelPostion();
+                $(window).scroll(function () {
+                    resetRightPanelPostion();
+                });
+            }
+        }
+    })
+</script>
+<body>
+<div class="main clearfix">
+    <div class="main-con">
+        <div class="list">
+            <div class="nav">2017</div>
+            <div class="list_main" style="height:300px;background:#fff;">
+            </div>
+        </div>
+        <div class="list">
+            <div class="nav">2016</div>
+            <div class="list_main" style="height:300px;background:#fff;">
+            </div>
+        </div>
+        <div class="list">
+            <div class="nav">2015</div>
+            <div class="list_main" style="height:300px;background:#fff;">
+            </div>
+        </div>
+        <div class="list">
+            <div class="nav">2014</div>
+            <div class="list_main" style="height:300px;background:#fff;">
+            </div>
+        </div>
+        <div class="list">
+            <div class="nav">2013</div>
+            <div class="list_main" style="height:300px;background:#fff;">
+            </div>
+        </div>
+        <div class="list">
+            <div class="nav">2012</div>
+            <div class="list_main" style="height:300px;background:#fff;">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
