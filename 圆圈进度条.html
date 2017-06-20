@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh">
+<head>
+
+
+</head>
+<body>
+<div id="memory"></div>
+<script type="text/javascript"  src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="http://www.51xuediannao.com/js/jquery/radialIndicator/radialIndicator.js"></script>
+<script type="text/javascript">
+    radialIndicator.defaults.initValue = 0; //指示器赤初始值
+    var memoryjs = $('#memory').radialIndicator({
+        barWidth: 10,
+        radius:200,
+        roundCorner: true,
+        percentage: true,
+        barColor: {
+            0: '#33CC33',
+            33: '#37BC9B ',
+            66: '#23B7E5',
+            100: '#FF0000'},percentage: true}).data('radialIndicator');
+    memoryjs.animate(60);
+
+</script>
+
+</body>
+</html>
