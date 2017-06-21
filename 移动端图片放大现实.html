@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title><?php echo $hotInfo[0]['title'] ?></title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="http://www.17sucai.com/preview/147804/2015-05-28/jiaoben155300/css/fsgallery.css" rel="stylesheet">
+    <style type="text/css">
+        *,body,html{padding:0;margin:0;font-family:"PingFang SC","Helvetica Neue",Helvetica,"Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;font-style: 14px;}
+        ul,li,dl{list-style: none;}
+        body{overflow-x: hidden;max-width: 768px;margin:0 auto;}
+        a{color:#323232;text-decoration: none;}
+        a:hover{color:#e43c43;}
+
+        .container{padding:20px 16px;}
+        .container p{line-height: 1.8rem; color: #212121;letter-spacing: 1px;text-align: justify;}
+        .container h1{font-size: 1.4rem;margin-bottom: 10px;line-height: 2rem;font-weight: 500;color:#333;}
+        .container .xuyan{margin-bottom: 15px;}
+        .container .xuyan .xy-content{margin-bottom:5px;overflow: hidden;}
+        .container .xuyan .xy-con{height: 60px}
+        .container .xuyan .more{text-align: right;color:#00d191;}
+        .container h2{color:#333;font-weight: 400;font-size: 1.2rem;margin-bottom: 5px;}
+        .container .content {margin-bottom: 15px;font-size: 1.1rem;line-height: 2rem;text-align:justify;letter-spacing:0.5px;}
+        .container .content ul{background-color: #f4f4f4;padding:10px 20px;}
+        .container .content ul li{margin-bottom: 10px;overflow: hidden;}
+        .container .content ul li label{display: inline-block;width: 40%;float: left;color:#999;}
+        .container .content ul li:last-child{margin-bottom: 0}
+        .container .content .explain{margin-bottom: 20px;}
+        .container .content .con h3{font-size:1.1rem;font-weight: 500;}
+        .container .content p{margin-bottom: 15px;font-size: 1.1rem;line-height: 2rem;text-align:justify;letter-spacing:0.5px;}
+        .container p img{display: block;margin: 0 auto;}
+        .container img{width:100%;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>这里是标题</h1>
+        <div class="xuyan">
+            <h2>序言</h2>
+            <div class="xy-content">
+            	<p>序言，啊哈哈哈哈序言，到底啥是序言？有那么重要吗？</p>
+            </div>
+            
+        </div>
+        <div class="content">
+            <div class="explain">
+            	<ul>
+            		<li><label>效力级别</label><span>法律</span></li>
+            		<li><label>时效性</label><span>已被修订</span></li>
+            		<li><label>发布日期</label><span>1980-09-10</span></li>
+            		<li><label>效力级别</label><span>法律</span></li>
+            		<li><label>效力级别</label><span>法律</span></li>
+            	</ul>
+            </div>
+            <div class="con">
+            	<h3 id="31" class="">第一章</h3>
+            	<h4 id="3" class="">第一节</h4>
+            	<p>序言，到底啥是序言？有那么重要吗？重要的是老盯着序言俩字看的话，突然发现，哎呦我去，这俩字咋不认识了？吓得我赶紧喝口水压压惊，百度完了才知道这也不是啥毛病，没啥大不了的，简单来说就是瞎了。。。。我只是为了测试下拉效果而存在的，不用紧张，啊哈哈哈哈</p>
+            	<p>这里放的是内容</p>
+            </div>
+        </div>
+        <ul class="thumbnails" id="gallery">
+            <li class="span3">
+                <a href="http://www.17sucai.com/preview/147804/2015-05-28/jiaoben155300/img/1.jpg">
+                    <img src="http://www.17sucai.com/preview/147804/2015-05-28/jiaoben155300/img/1_mini.jpg" alt="" />
+                </a>
+            </li>
+            <li class="span3">
+                <a href="http://www.17sucai.com/preview/147804/2015-05-28/jiaoben155300/img/2.jpg">
+                    <img src="http://www.17sucai.com/preview/147804/2015-05-28/jiaoben155300/img/2_mini.jpg" alt="" />
+                </a>
+            </li>
+            <li class="span3">
+                <a href="http://www.17sucai.com/preview/147804/2015-05-28/jiaoben155300/img/3.jpg">
+                    <img src="http://www.17sucai.com/preview/147804/2015-05-28/jiaoben155300/img/3_mini.jpg" alt="" />
+                </a>
+            </li>
+            <li class="span3">
+                <a href="http://www.17sucai.com/preview/147804/2015-05-28/jiaoben155300/img/4.jpg">
+                    <img src="http://www.17sucai.com/preview/147804/2015-05-28/jiaoben155300/img/4_mini.jpg" alt="" />
+                </a>
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript" src="http://s2.zhoudao.cc/Js/jquery.min.js"></script>
+    <script src="http://www.17sucai.com/preview/147804/2015-05-28/jiaoben155300/js/fs_forse.js"></script>
+    <script type="text/javascript">
+    	if($('.xy-content p').height() >= 60){
+    		$(".xuyan").append("<p class='more'>展开</p>");
+    		$(".xy-content").addClass('xy-con');
+    		$(".more").click(function(){
+	    		var ss = $(".more").text();
+	    		var conHeight = $(".xy-content p").height();
+		        if(ss == '展开'){
+		            $(".xy-content").animate({height:conHeight+'px'});
+		            $(".more").text('收起');
+		        }else{
+		            $(".xy-content").animate({height:60+'px'});
+		            $(".more").text('展开');
+		        }
+	    	})
+    	}
+
+    </script>
+</body>
+</html>
