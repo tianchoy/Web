@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      //js执行隐藏的时候，h2也会隐藏，目前的解决方案是给h2加个强制显示的属性
+      h2{display:block !important}
+    </style>
+</head>
+<body>
+<script language="javascript" type="text/javascript">
+var map = {"1":"div1","2":"div2","3":"div3","4":"div4"};
+    $("#choose").on("change", function(){
+        var divId = map[this.value];
+        $("#"+divId).show().siblings().hide();
+    });
+</script>
+<h2>服务记录
+    <span>选择份数
+        <select id="choose">
+            <option value="1">第1份</option>
+            <option value="2">第2份</option>
+            <option value="3">第3份</option>
+            <option value="4">第4份</option>
+        </select>
+    </span>
+</h2>
+<div id ="div1" style="display:none">内容1111</div>
+<div id ="div2" style="display:none">内容2222</div>
+<div id ="div3" style="display:none">内容3333</div>
+<div id ="div4" style="display:none">内容4444</div>
+</body>
+</html>
