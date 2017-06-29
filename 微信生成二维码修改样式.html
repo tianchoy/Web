@@ -1,0 +1,13 @@
+    var obj = new WxLogin({
+        id:"wx_login",
+        appid: "<?= $params['APP_KEY']?>",
+        scope: "snsapi_login",
+        redirect_uri: "<?= $params['CALLBACK']?>",
+        state: "<?= $fopenid;?>",
+        style: 'black',
+        href:'https://wubaiding.bj.bcebos.com/resouces/css/weixin_qrcode.css'  //覆盖微信生成的样式
+    });
+    //自定义样式 其中#wx_login 为微信二维码位置的 id
+    $('#wx_login iframe').height(175); 
+    $('#wx_login iframe').width(175);
+    $('#wx_login iframe').css({'border':'1px solid #d4d4d4','background':'#fff'})
