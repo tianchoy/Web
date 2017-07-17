@@ -11,16 +11,18 @@
     <option value="3">3</option>
 </select>
 <p id="price">13</p>
-<p id="result">13</p>
+<p id="result"></p>
 
 <script src="http://wx.hetongxia.com/Js/jquery.min.js"></script>
 <script>
-    $("#sel").on('change',function(){
+    $("#sel").on('change',ere);
+    function ere(){
         var vs = $('#sel option:selected').val();
         var pr = parseFloat($("#price").text());
         var re = vs * pr;
         $("#result").html(re)
-    })
+    }
+    ere();
 </script>
 </body>
 </html>
