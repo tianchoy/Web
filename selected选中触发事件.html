@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<select id="sel">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+</select>
+<p id="price">13</p>
+<p id="result">13</p>
+
+<script src="http://wx.hetongxia.com/Js/jquery.min.js"></script>
+<script>
+    $("#sel").on('change',function(){
+        var vs = $('#sel option:selected').val();
+        var pr = parseFloat($("#price").text());
+        var re = vs * pr;
+        $("#result").html(re)
+    })
+</script>
+</body>
+</html>
