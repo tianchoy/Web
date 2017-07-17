@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .box span{border:1px solid #f1f1f1;padding:5px 10px;cursor: pointer}
+        .box input{border:1px solid #f1f1f1;height: 25px;text-align: center}
+    </style>
 </head>
 <body>
 <select id="sel">
@@ -12,6 +16,16 @@
 </select>
 <p id="price">13</p>
 <p id="result"></p>
+
+
+<div class="box">
+    <span class="min">-</span>
+    <input value="1" class="nums">
+    <span class="plus">+</span>
+
+    <div class="pr">10</div>
+    <div class="res"></div>
+</div>
 
 <script src="http://wx.hetongxia.com/Js/jquery.min.js"></script>
 <script>
@@ -23,6 +37,37 @@
         $("#result").html(re)
     }
     ere();
+
+// 输入狂
+
+    var price = $(".pr").text();
+
+    $(".plus").on('click',function(){
+        var num = parseInt($(this).parent(".box").find(".nums").val()) + 1;
+
+        var total=num*price;
+        $(".res").text(total.toFixed(2));
+        $(this).parent(".box").find(".nums").val(num);
+    })
+
+    $(".min").on('click',function(){
+        var num = parseInt($(this).parent(".box").find(".nums").val()) - 1;
+
+        if(num < 1) return false;
+
+        var total=num*price;
+        $(".res").text(total.toFixed(2));
+        $(this).parent(".box").find(".nums").val(num);
+    })
+
+    function money(){
+        var num = $(".nums").val();
+        var dpri = $(".pr").text();
+        var total=num*dpri;
+        $(".res").text(total);
+    }
+    money();
+
 </script>
 </body>
 </html>
