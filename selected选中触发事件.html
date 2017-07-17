@@ -20,11 +20,15 @@
 
 <div class="box">
     <span class="min">-</span>
-    <input value="1" class="nums">
+        <input value="1" class="nums">
     <span class="plus">+</span>
 
     <div class="pr">10</div>
     <div class="res"></div>
+
+    <div>
+        <input type="checkbox" name="is_urgent" value="20" class="gent">加20
+    </div>
 </div>
 
 <script src="http://wx.hetongxia.com/Js/jquery.min.js"></script>
@@ -37,37 +41,50 @@
         $("#result").html(re)
     }
     ere();
-
-// 输入狂
-
+    // 输入狂
     var price = $(".pr").text();
-
     $(".plus").on('click',function(){
         var num = parseInt($(this).parent(".box").find(".nums").val()) + 1;
 
         var total=num*price;
         $(".res").text(total.toFixed(2));
-        $(this).parent(".box").find(".nums").val(num);
-    })
 
+        $(this).parent(".box").find(".nums").val(num);
+
+        money();
+    });
     $(".min").on('click',function(){
         var num = parseInt($(this).parent(".box").find(".nums").val()) - 1;
-
         if(num < 1) return false;
 
         var total=num*price;
         $(".res").text(total.toFixed(2));
+
         $(this).parent(".box").find(".nums").val(num);
-    })
 
+        money();
+    });
     function money(){
-        var num = $(".nums").val();
-        var dpri = $(".pr").text();
-        var total=num*dpri;
-        $(".res").text(total);
-    }
-    money();
+        var is_urgent = $(".gent").prop('checked');
+        var urgentPrice  = is_urgent?parseFloat($(".gent").val()):0.00;
 
+        var num = $(".nums").val();
+        var total = num*price + urgentPrice;
+        $(".res").text(total);
+
+
+    }
+    $("input[type='checkbox']").click(function(){is_checkbox()});
+    is_checkbox();
+
+    function is_checkbox(){
+        var num       = $("#num").val();
+        var is_urgent = $("input[name='is_urgent']").prop('checked');
+        
+        money();
+    }
+
+    money();
 </script>
 </body>
 </html>
